@@ -1,5 +1,6 @@
 import time
 import autopy
+# import pyautogui
 import cv2
 import numpy as np
 import HandTrackingModule as htm
@@ -55,6 +56,7 @@ while True:
             if distancebetween2fingers<50:
                 frame=cv2.circle(center=(coordinates[4],coordinates[5]),color=(25, 227, 79),img=frame,radius=8,thickness=cv2.FILLED)
                 autopy.mouse.click()
+                # pyautogui.click()
                 
         if fingers[1]==1 and fingers[2]==0:
             
@@ -64,7 +66,9 @@ while True:
             curr_x = prev_x + (x3 - prev_x)/smoothening
             curr_y = prev_y + (y3 - prev_y) / smoothening
 
-            autopy.mouse.move(screen_width - curr_x, curr_y)    # Moving the cursor
+            # pyautogui.moveTo(screen_width - curr_x, curr_y)
+
+            autopy.mouse.smooth_move(screen_width - curr_x, curr_y)    # Moving the cursor
             cv2.circle(frame, (x1, y1), 7, (255, 0, 255), cv2.FILLED)
             prev_x, prev_y = curr_x, curr_y
 
