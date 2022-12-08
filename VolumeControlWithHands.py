@@ -18,7 +18,7 @@ volume.GetMute()
 volume.GetMasterVolumeLevel()
 print(volume.GetVolumeRange())
 min_volume,max_volume= volume.GetVolumeRange()
-# volume.SetMasterVolumeLevel(-20.0, None)
+volume.SetMasterVolumeLevel(-20.0, None)
 
 thickness=cv2.FILLED
 radius=12

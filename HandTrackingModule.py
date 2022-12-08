@@ -65,6 +65,7 @@ class HandTrack():
         length=math.hypot(x2-x1,y2-y1)
 
         return length,frame,[x1,y1,x2,y2,cx,cy]
+    
 
 def main():
 
@@ -83,7 +84,7 @@ def main():
 
         frame=handTracker.processHands(frame,imgRGB)
 
-        lmList=handTracker.findPosition(frame,draw=False)
+        lmList=handTracker.findPosition(frame,draw=True)
 
         # print(lmList)
 
